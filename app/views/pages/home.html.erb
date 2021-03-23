@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h1 class="text-center mb-5">Bienvenue sur le site des apaches</h1>
+  <h1 class="text-center mb-5">Bienvenue sur le site des Apaches</h1>
   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
   when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -15,14 +15,14 @@
 </div>
 
 
-<div class="spectacle container">
-  <h1 class="mb-5">Spectacles</h1>
+<div class="spectacle">
+  <h1 class="mb-5 text-center">Spectacles</h1>
 
 
   <div class="event-card">
     <div class="show-pic">
       <%= cl_image_tag "apaches/affiche-ascenceur-2021", class:"pic-event" %>
-    </div>
+    </div> <!-- show pic -->
     <div class="show-description">
       <h2 >Sans ascenceur</h2>
       <div class="show-duration mb-3">
@@ -39,7 +39,47 @@
     </div> <!-- show description -->
   </div> <!-- event card -->
 
+<div class="actors container mt-5">
+  <h1 class="mb-5">Les (grands) acteurs d'Apaches...</h1>
 
+  <div class="actor-card-home">
+    <div class="pic-actor-1">
+      <%= cl_image_tag "apaches/profil-pic-thibaud-C-Dan_Ramaen", class:"pic-actor-1"%>
+    </div> <!--pic actor 1-->
+    <div class="actor-description">
+      <h3>Thibaud Boursier</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+    </div> <!-- actor description -->
+  </div> <!-- actor card home -->
 
+  <div class="actor-card-home">
+    <div class="actor-description">
+      <h3>Valentin Rolland</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+    </div> <!-- actor description -->
+    <div class="pic-actor-1">
+      <%= cl_image_tag "apaches/profil-pic-valentin", class:"pic-actor-1"%>
+    </div> <!--pic actor 1-->
+  </div> <!-- actor card home -->
+</div> <!--actors container mt-5 -->
 
+  <div class="actor-card-home">
+    <div class="pic-actor-1">
+      <%= cl_image_tag "apaches/profil-pic-charlie", class:"pic-actor-1"%>
+    </div> <!--pic actor 1-->
+    <div class="actor-description">
+      <h3>Charlie Bertrand</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </p>
+    </div> <!-- actor description -->
+  </div> <!-- actor card home -->
+<br><br><br><br>
 </div>

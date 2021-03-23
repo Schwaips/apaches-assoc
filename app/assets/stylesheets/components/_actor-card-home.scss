@@ -1,0 +1,26 @@
+.actor-card-home {
+  display: flex;
+  height: 275px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.actor-card-home h3 {
+  color: $gray;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.pic-actor-1 {
+  height: 275px;
+  width: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-right: 40px;
+}
+
+.actor-description {
+  margin-bottom: 40px;
+}
