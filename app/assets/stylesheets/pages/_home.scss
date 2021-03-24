@@ -5,3 +5,26 @@
   width: 100%;
   object-fit: cover;
 }
+
+.pic-main-2 {
+  height: 522px;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+// card board container dans lequel tu mets tes cards.
+.show-board {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  // white-space: nowrap;
+
+  width: 90%;
+
+  // trouver une solution pour la souris
+  margin: 0 auto;
+    &::-webkit-scrollbar {
+    display: none;
+  }
+}
