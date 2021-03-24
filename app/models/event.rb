@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :actor
+  has_many :actors, through: :actor_events
   has_one_attached :photo
 end

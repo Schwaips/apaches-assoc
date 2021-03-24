@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_171145) do
+ActiveRecord::Schema.define(version: 2021_03_24_180644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2021_03_24_171145) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "actor_events", force: :cascade do |t|
+    t.bigint "actor_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_actor_events_on_actor_id"
+    t.index ["event_id"], name: "index_actor_events_on_event_id"
+  end
+
   create_table "actors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -56,10 +65,8 @@ ActiveRecord::Schema.define(version: 2021_03_24_171145) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "duration"
-    t.bigint "actor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["actor_id"], name: "index_events_on_actor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,5 +83,6 @@ ActiveRecord::Schema.define(version: 2021_03_24_171145) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "events", "actors"
+  add_foreign_key "actor_events", "actors"
+  add_foreign_key "actor_events", "events"
 end
