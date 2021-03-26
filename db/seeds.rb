@@ -8,6 +8,7 @@
 require "open-uri"
 
 puts "--Destroying current data--"
+  # only for developpement envrionnement.
   Actor.destroy_all
   Event.destroy_all
 
