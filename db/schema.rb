@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 2021_03_24_180644) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "duration"
+    t.bigint "actor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["actor_id"], name: "index_events_on_actor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,4 +87,5 @@ ActiveRecord::Schema.define(version: 2021_03_24_180644) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actor_events", "actors"
   add_foreign_key "actor_events", "events"
+  add_foreign_key "events", "actors"
 end
