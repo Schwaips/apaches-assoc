@@ -1,0 +1,21 @@
+<div class="event-card">
+  <% @events.each do |event| %>
+    <div class="show-pic">
+      <%= cl_image_tag "apaches/affiche-ascenceur-2021", class:"pic-event" %>
+    </div> <!-- show pic -->
+    <div class="show-description">
+      <h2 ><%= event.title %></h2>
+      <div class="show-duration mb-3">
+        <span><i class="far fa-clock"></i> <%= event.duration %></span>
+        <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
+      </div> <!-- show  duration-->
+      <div class="show-actor mb-2">
+        <span><i class="fas fa-theater-masks"></i> Avec <strong>Thibaud Boursier</strong> et <strong>Valentin Rolland</strong></span>
+      </div> <!-- show actor -->
+      <div class="show-resume mb-2">
+      <span><i class="fas fa-film"></i> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+      </div> <!-- show resume -->
+    </div> <!-- show description -->
+  <% end %>
+</div> <!-- event card -->

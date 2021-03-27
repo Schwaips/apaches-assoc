@@ -24,3 +24,9 @@ p {
 body {
   background-color: white;
 }
+
+
+//avoid floating footer
+.main {
+  min-height: calc(100vh - 20vh); // if your footer height is 60px
+}

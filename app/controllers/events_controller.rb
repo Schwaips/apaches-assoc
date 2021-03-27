@@ -18,7 +18,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     authorize @event
     @event.user = current_user
-    @event.actor = Actor.find(6)
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save
@@ -58,6 +57,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :duration, :actor_id, :user_id)
+    params.require(:event).permit(:title, :duration, :user_id)
   end
 end

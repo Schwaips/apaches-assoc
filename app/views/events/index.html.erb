@@ -3,9 +3,5 @@
   <%= link_to "Ajouter un spectacle", new_event_path, class: "btn btn-ghost" %>
 <% end %>
 <ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= render "cards" %>
-    </li>
-  <% end %>
+  <%= render "cards" %>
 </ul>
