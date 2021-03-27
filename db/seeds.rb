@@ -79,4 +79,23 @@ puts "--Creation Florian pagès"
 puts "--Florian created--"
 
 
+puts "---creating events---"
+
+sa = Event.new(title: "Sans ascenseur",
+  duration: "80",
+  summary: "Qu’advient-il lorsque Monsieur n°1 croise  Monsieur n°2 lors d’une soirée organisée ?
+    Chacun est venu de son coté. Seul.
+    Ils s’efforcent de dialoguer et tentent de se lier d’amitié, d’oublier un moment leur solitude en commentant les petits tracas de la vie.
+    Pour l’un et l’autre, ce n’est pas toujours simple. Mais cela donne une série de situations et de dialogues enlevés et percutants, qui oscillent entre l’absurde et le burlesque.",
+  intention_note: "Le projet de mettre en scène le texte « Sans ascenseur » de Sébastien Thiéry est né d'un désir simple : mettre en mots et en corps la folie de deux comédiens, dans cet univers absurde et burlesque, avec un minimum de décors et d’accessoires, pour une forme tournable et économique qui puisse avant tout offrir un imaginaire riche et un large champ de projection pour le spectateur.
+  Le format du texte, sous forme de sketchs, se prête parfaitement à cet exercice. Sa drôlerie et sa qualité d'écriture sont à même de répondre aux dites exigences mais aussi aux aspirations artistiques.
+  L'idée principale étant de multiplier
+  les situations de rencontres des deux protagonistes,
+  au cours d'une même soirée, avec toutes les étapes
+  qu'elle comporte (le dîner, la piste de danse, la pause cigarette sur le balcon, le karaoké, la fin de soirée éméchée, le lendemain difficile, etc...). La rencontre, l'échange, la parole, le geste, l'incompréhension sont autant de thèmes récurrents, d'éléments de situations propices aux ressorts comiques, mais qui délivrent un message à la fois doux et acide sur les rapports humains dans notre société. Deux hommes qui cherchent à se connaître eux-mêmes en risquant l'autre, qui se questionnent sur ce qui les entoure et sur la nature même de leurs échanges." )
+  sapic = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1616519839/apaches/affiche-ascenceur-2021.jpg')
+  sa.photo.attach(io: sapic, filename: 'sans-ascenseur-affiche.jpg', content_type: 'image/jpg')
+  sa.save!
+
+  puts "--Sans ascenseur event saved--"
 puts "---SEED END---"
