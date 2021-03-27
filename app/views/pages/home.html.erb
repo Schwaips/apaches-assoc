@@ -16,7 +16,6 @@
     <div class="container">
      <h1 class="mb-5">Spectacles</h1>
     <% @events.each do |event| %>
-    <%= cl_image_tag event.photo.key %>
     <div class="show-board">
       <div class="event-card">
         <div class="show-pic">
@@ -29,11 +28,10 @@
             <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
           </div> <!-- show  duration-->
           <div class="show-actor mb-2">
-            <span><i class="fas fa-theater-masks"></i> Avec <strong>Thibaud Boursier</strong> et <strong>Valentin Rolland</strong></span>
+            <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
           </div> <!-- show actor -->
           <div class="show-resume mb-2">
-          <span><i class="fas fa-film"></i> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+          <span><i class="fas fa-film"></i> <%= event.summary.first(180)...%> </span>
           </div> <!-- show resume -->
         </div> <!-- show description -->
       </div> <!-- event card -->
