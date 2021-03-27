@@ -3,10 +3,10 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
-
   end
 
   def show
+    authorize @event
   end
 
   def new
@@ -18,11 +18,13 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     authorize @event
     @event.user = current_user
+    @event.actor = Actor.find(6)
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save
       redirect_to event_path(@event)
     else
+      raise
       render :new
     end
   end
@@ -33,7 +35,7 @@ class EventsController < ApplicationController
 
   def update
     authorize @event
-    @event.user = current_user
+    @event.user_id = current_user
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save

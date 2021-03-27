@@ -1,8 +1,11 @@
 <h1>Liste des évènements</h1>
+<% if policy(@events).new? %>
+  <%= link_to "Ajouter un spectacle", new_event_path, class: "btn btn-ghost" %>
+<% end %>
 <ul>
   <% @events.each do |event| %>
     <li>
-      <%= event.title %> <%= event.duration %> <%= event.actor %>
+      <%= render "cards" %>
     </li>
   <% end %>
 </ul>
