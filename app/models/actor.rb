@@ -5,6 +5,7 @@ class Actor < ApplicationRecord
   validates :role, inclusion: { in: CATEGORY }
   validates :email, uniqueness: true
   has_one_attached :photo
+  # table de jointure avec actor events
   has_many :actor_events
   has_many :events, through: :actor_events
 end
