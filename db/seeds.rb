@@ -97,5 +97,11 @@ sa = Event.new(title: "Sans ascenseur",
   sa.photo.attach(io: sapic, filename: 'sans-ascenseur-affiche.jpg', content_type: 'image/jpg')
   sa.save!
 
+  saactorstib = ActorEvent.new(event_id: sa.id, actor_id: tibo.id)
+  saactorsval = ActorEvent.new(event_id: sa.id, actor_id: val.id)
+  saactorstib.save!
+  saactorsval.save!
+  puts "--actors added to actor_events for Sans ascenseur"
+
   puts "--Sans ascenseur event saved--"
 puts "---SEED END---"

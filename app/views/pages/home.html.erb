@@ -15,16 +15,17 @@
   <div class="spectacle">
     <div class="container">
      <h1 class="mb-5">Spectacles</h1>
-
+    <% @events.each do |event| %>
+    <%= cl_image_tag event.photo.key %>
     <div class="show-board">
       <div class="event-card">
         <div class="show-pic">
-          <%= cl_image_tag "apaches/affiche-ascenceur-2021", class:"pic-event" %>
+          <%= cl_image_tag event.photo.key, class:"pic-event" %>
         </div> <!-- show pic -->
         <div class="show-description">
-          <h2 >Sans ascenceur</h2>
+          <h2><%= event.title%></h2>
           <div class="show-duration mb-3">
-            <span><i class="far fa-clock"></i> 120 min</span>
+            <span><i class="far fa-clock"></i> <%= event.duration %> min</span>
             <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
           </div> <!-- show  duration-->
           <div class="show-actor mb-2">
@@ -36,6 +37,7 @@
           </div> <!-- show resume -->
         </div> <!-- show description -->
       </div> <!-- event card -->
+    <% end %>
     </div> <!--container-->
 
 
