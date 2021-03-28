@@ -23,7 +23,6 @@ class EventsController < ApplicationController
       @event.save
       redirect_to event_path(@event)
     else
-      raise
       render :new
     end
   end
@@ -34,7 +33,7 @@ class EventsController < ApplicationController
 
   def update
     authorize @event
-    @event.user_id = current_user
+    @event.user = current_user
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save

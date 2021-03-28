@@ -1,5 +1,5 @@
-<div class="event-card">
-  <% @events.each do |event| %>
+<% @events.each do |event| %>
+  <div class="event-card">
     <div class="show-pic">
       <%= cl_image_tag "apaches/affiche-ascenceur-2021", class:"pic-event" %>
     </div> <!-- show pic -->
@@ -17,5 +17,5 @@
       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
       </div> <!-- show resume -->
     </div> <!-- show description -->
-  <% end %>
-</div> <!-- event card -->
+  </div> <!-- event card -->
+<% end %>
