@@ -1,7 +1,7 @@
 class CreateActorEvents < ActiveRecord::Migration[6.1]
   def change
     create_table :actor_events do |t|
-      t.references :actor, null: false, foreign_key: true
+
       t.references :event, null: false, foreign_key: true
 
       t.timestamps
