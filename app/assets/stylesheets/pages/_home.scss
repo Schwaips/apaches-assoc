@@ -97,7 +97,7 @@
   background-color: rgba(255, 234, 238, 0.5);
   width: 800px;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
   margin-right: 10px;
   display: inline-block;
@@ -113,11 +113,13 @@
   opacity:  0.3;
 }
 .carousel__container:hover .carousel__item:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
   opacity: 1;
 }
 
-
+.weak-margin .carousel__item {
+  margin: 0 50px;
+}
 // // card board container dans lequel tu mets tes cards.
 // .show-board {
 //   display: flex;

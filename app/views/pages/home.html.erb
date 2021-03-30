@@ -14,66 +14,46 @@
     <%= cl_image_tag "apaches/Sans-ascenseur-sample", class:"pic-main mt-5 mb-5" %>
   </div> <!-- image home -->
 
-<div class="container">
-  <div class="carousel">
-    <div class="carousel__container">
-      <% @events.each do |event| %>
-        <div class="carousel__item">
-          <div class="event-card">
-            <div class="show-pic">
-              <% if event.photo.attached? %>
-                <%= cl_image_tag event.photo.key, class:"pic-event" %>
-              <% else %>
-                <%= image_tag "https://source.unsplash.com/200x300/?theater", class: "pic-event" %>
-              <% end %>
+  <div class="container spectacle">
+    <h1 class="">Spectacles</h1>
+  </div>
+  <div class="weak-margin">
+    <div class="carousel">
+      <div class="carousel__container">
+        <% @events.each do |event| %>
+          <div class="carousel__item">
+            <div class="event-card">
+              <div class="show-pic">
+                <% if event.photo.attached? %>
+                  <%= cl_image_tag event.photo.key, class:"pic-event" %>
+                <% else %>
+                  <%= image_tag "https://source.unsplash.com/200x300/?theater", class: "pic-event" %>
+                <% end %>
+              </div> <!-- show pic -->
               <div class="show-description">
-                <h2> <%= event.title %></h2>
-              </div>
-            </div> <!-- show pic -->
-          </div> <!-- event card -->
-        </div> <!-- carousel item -->
-      <% end %>
-    </div> <!-- carousel container -->
-  </div> <!-- carousel -->
-</div> <!-- container -->
+                <h2><%= event.title %></h2>
+                <div class="show-duration mb-3">
+                  <span><i class="far fa-clock"></i> <%= event.duration %> min</span>
+                  <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
+                </div> <!-- show  duration-->
+                <div class="show-actor mb-2">
+                  <% if event.actors.exists? %>
+                    <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
+                  <% end %>
+                </div> <!-- show actor -->
+                <div class="show-resume mb-2">
+                  <% if event.summary %>
+                    <span><i class="fas fa-film"></i>  <%= event.summary.first(40) %>... </span>
+                  <% end %>
+                </div> <!-- show resume -->
+              </div> <!-- show description -->
+            </div> <!-- event card -->
+          </div> <!-- carousel item -->
+        <% end %>
+      </div> <!-- carousel container -->
+    </div> <!-- carousel -->
+  </div> <!-- weak margin -->
 
-
-
-
-
-  <div class="spectacle mt-5">
-    <div class="container">
-     <h1 class="mb-5">Spectacles</h1>
-    <% @events.each do |event| %>
-    <div class="show-board">
-      <div class="event-card">
-        <div class="show-pic">
-          <%= cl_image_tag event.photo.key, class:"pic-event" %>
-        </div> <!-- show pic -->
-        <div class="show-description">
-          <h2><%= event.title%></h2>
-          <div class="show-duration mb-3">
-            <span><i class="far fa-clock"></i> <%= event.duration %> min</span>
-            <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
-          </div> <!-- show  duration-->
-          <div class="show-actor mb-2">
-          <% if event.actors.exists? %>
-            <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
-          <% end %>
-          </div> <!-- show actor -->
-          <div class="show-resume mb-2">
-            <% if event.summary %>
-              <span><i class="fas fa-film"></i> Coucou... </span>
-            <% end %>
-          </div> <!-- show resume -->
-        </div> <!-- show description -->
-      </div> <!-- event card -->
-    <% end %>
-    </div> <!--container-->
-
-
-    </div> <!-- show board for vertical scrolling -->
-  </div> <!-- spectacle -->
 
   <div class="image-home">
     <%= cl_image_tag "apaches/logo_apaches_1236x1080", class:"pic-main-2 mt-5 mb-5" %>
