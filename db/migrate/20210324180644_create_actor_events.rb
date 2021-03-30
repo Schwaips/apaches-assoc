@@ -3,7 +3,7 @@ class CreateActorEvents < ActiveRecord::Migration[6.1]
     create_table :actor_events do |t|
 
       t.references :event, null: false, foreign_key: true
-
+      t.references :actor, null: false, foreign_key: true
       t.timestamps
     end
   end

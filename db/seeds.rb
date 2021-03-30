@@ -11,10 +11,20 @@ puts "--Destroying current data--"
   # only for developpement envrionnement.
   Actor.destroy_all
   Event.destroy_all
+  User.destroy_all
 
 puts "--data destroyed--"
 
 puts "--starting seed---"
+puts "--Creating Users --"
+puts "admin user charlie"
+c = User.create!(email: "charlie.bertrand@live.com", password: "charlie.bertrand@live.com", admin: true)
+puts "-- charlie created"
+
+puts "example"
+a = User.create!(email:"alice@example.org", password: "alice@example.org")
+puts "--alice created as example"
+
 
 puts "--Creating Actors-- "
 
