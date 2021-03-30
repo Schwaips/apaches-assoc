@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    actors_name
     authorize @event
   end
 
@@ -55,7 +56,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def actors_name
+    @actors = Actor.all
+    @names = []
+    @actors.each do |actor|
+      @names << actor.first_name + " " + actor.last_name
+    end
+  end
+
+
   def event_params
-    params.require(:event).permit(:title, :duration, :user_id)
+    params.require(:event).permit(:title, :duration, :user_id, :photo, :intention_note, :summary, :actors )
   end
 end

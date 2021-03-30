@@ -17,6 +17,13 @@
   font-size: 24px;
 }
 
-.nav-link {
-  padding-left: 100px;
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 5.5rem;
+    padding-top: 15px;
+}
+
+.avatar {
+  height: 70px;
+  width: 70px;
 }
