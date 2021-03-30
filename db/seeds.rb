@@ -15,6 +15,7 @@ puts "--Destroying current data--"
 puts "--data destroyed--"
 
 puts "--starting seed---"
+
 puts "--Creating Actors-- "
 
 puts "-Creating Tibo-"
