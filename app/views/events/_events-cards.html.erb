@@ -1,0 +1,35 @@
+
+<div class="container">
+  <% @events.each do |event| %>
+    <div class="event-card">
+      <div class="show-pic">
+        <% if event.photo.attached? %>
+          <%= cl_image_tag event.photo.key, class:"pic-event" %>
+        <% else %>
+          <%= image_tag "https://source.unsplash.com/200x300/?theater", class: "pic-event" %>
+        <% end %>
+      </div> <!-- show pic -->
+      <div class="show-description">
+        <h2 ><%= event.title %></h2>
+        <div class="show-duration mb-3">
+          <span><i class="far fa-clock"></i> <%= event.duration %></span>
+          <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
+        </div> <!-- show  duration-->
+        <div class="show-actor mb-2">
+          <% if event.actors.exists? %>
+            <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
+          <% end %>
+        </div> <!-- show actor -->
+        <div class="show-resume mb-2">
+        <span><i class="fas fa-film"></i> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+        </div> <!-- show resume -->
+      </div> <!-- show description -->
+      <% if  policy(@events).new? %>
+        <%= link_to  event_path(event), method:"DELETE", data: {confirm: "Supprimer #{event.title} ?"} do %>
+          <span>  <i class="far fa-trash-alt"></i></span>
+        <% end %>
+      <% end %>
+    </div> <!-- event card -->
+  <% end %>
+</div> <!-- container -->
