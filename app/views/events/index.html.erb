@@ -1,7 +1,7 @@
 <div class="title-bar container">
   <h1 class="flex-item">Liste des événements</h1>
   <% if policy(@events).new? %>
-    <%= link_to "Ajouter un spectacle", new_event_path, class: "btn btn-ghost" %>
+    <%= link_to "Ajouter un spectacle", new_event_path, class: "btn btn-action" %>
   <% end %>
 </div>
 <ul>
