@@ -11,7 +11,8 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    actors_name
+    @actorevent = ActorEvent.new
+    # actors_name
     authorize @event
   end
 
@@ -20,9 +21,10 @@ class EventsController < ApplicationController
     authorize @event
     @event.user = current_user
     @event.assign_attributes(event_params)
+    raise
     if @event.valid?
       @event.save
-      redirect_to event_path(@event)
+      redirect_to "/"
     else
       render :new
     end
@@ -60,12 +62,11 @@ class EventsController < ApplicationController
     @actors = Actor.all
     @names = []
     @actors.each do |actor|
-      @names << actor.first_name + " " + actor.last_name
+      @names <<  actor.first_name + " " + actor.last_name
     end
   end
 
-
   def event_params
-    params.require(:event).permit(:title, :duration, :user_id, :photo, :intention_note, :summary, :actors )
+    params.require(:event).permit(:title, :duration, :user_id, :photo, :intention_note, :summary, :actors)
   end
 end

@@ -26,14 +26,14 @@
 .btn-gradient {
   color: white;
   padding: 15px 25px;
-  border-radius: 4px;
+  border-radius: 15px;
   font-weight: bold;
-  background: linear-gradient($pink, $bordeaux);
+  background: rgba(52,129,131, 0.9);
   transition: background 0.3s ease;
-  border: 1px solid $bordeaux;
+  // border: 1px solid $dark-green;
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+  background: rgba(52,129,131, 1);
   color: white;
 }
