@@ -8,6 +8,8 @@
   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
   It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
   and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <br>
+  <button class="btn btn-navigation">En savoir plus</button>
 </div> <!-- container -->
 
   <div class="image-home container">
@@ -15,40 +17,42 @@
   </div> <!-- image home -->
 
   <div class="container spectacle">
-    <h1 class="">Spectacles</h1>
+    <h1 class="text-center">Spectacles</h1>
   </div>
   <div class="weak-margin">
     <div class="carousel">
       <div class="carousel__container">
         <% @events.each do |event| %>
-          <div class="carousel__item">
-            <div class="event-card">
-              <div class="show-pic">
-                <% if event.photo.attached? %>
-                  <%= cl_image_tag event.photo.key, class:"pic-event" %>
-                <% else %>
-                  <%= image_tag "https://source.unsplash.com/200x300/?theater", class: "pic-event" %>
-                <% end %>
-              </div> <!-- show pic -->
-              <div class="show-description">
-                <h2><%= event.title %></h2>
-                <div class="show-duration mb-3">
-                  <span><i class="far fa-clock"></i> <%= event.duration %> min</span>
-                  <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
-                </div> <!-- show  duration-->
-                <div class="show-actor mb-2">
-                  <% if event.actors.exists? %>
-                    <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
+          <%= link_to  event_path(event), class:"nounderline" do %>
+            <div class="carousel__item">
+              <div class="event-card">
+                <div class="show-pic">
+                  <% if event.photo.attached? %>
+                    <%= cl_image_tag event.photo.key, class:"pic-event" %>
+                  <% else %>
+                    <%= image_tag "https://source.unsplash.com/200x300/?theater", class: "pic-event" %>
                   <% end %>
-                </div> <!-- show actor -->
-                <div class="show-resume mb-2">
-                  <% if event.summary %>
-                    <span><i class="fas fa-film"></i>  <%= event.summary.first(40) %>... </span>
-                  <% end %>
-                </div> <!-- show resume -->
-              </div> <!-- show description -->
-            </div> <!-- event card -->
-          </div> <!-- carousel item -->
+                </div> <!-- show pic -->
+                <div class="show-description">
+                  <h2><%= event.title %></h2>
+                  <div class="show-duration mb-3">
+                    <span><i class="far fa-clock"></i> <%= event.duration %> min</span>
+                    <span>  <i class="far fa-calendar-alt"></i>  Tous les samedis</span>
+                  </div> <!-- show  duration-->
+                  <div class="show-actor mb-2">
+                    <% if event.actors.exists? %>
+                      <span><i class="fas fa-theater-masks"></i> Avec <strong><%= event.actors.first.first_name %> <%= event.actors.first.last_name %> </strong> et <strong><%= event.actors.second.first_name %> <%= event.actors.second.last_name %></strong></span>
+                    <% end %>
+                  </div> <!-- show actor -->
+                  <div class="show-resume mb-2">
+                    <% if event.summary %>
+                      <span><i class="fas fa-film"></i>  <%= event.summary.first(40) %>... </span>
+                    <% end %>
+                  </div> <!-- show resume -->
+                </div> <!-- show description -->
+              </div> <!-- event card -->
+            </div> <!-- carousel item -->
+          <% end %>
         <% end %>
       </div> <!-- carousel container -->
     </div> <!-- carousel -->

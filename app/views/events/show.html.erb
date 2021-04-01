@@ -1,4 +1,24 @@
-<h1><%= @event.title %></h1>
-<p><strong>Durée : </strong><%= @event.duration %></p>
-<p><strong>Acteurs : </strong> </p>
-<%= link_to "Retour à la liste", events_path %>
+
+<div class="container mt-5 show-event">
+  <div class="d-flex">
+    <div class="pic-show-event">
+      <%= cl_image_tag @event.photo.key, class: "pic-show-event" %>
+    </div>
+    <div class="event-description ml-5">
+       <h1 class="mb-3"><%= @event.title %></h1>
+        <p><i class="far fa-clock"></i> <strong>Durée : </strong><%= @event.duration %> minutes</p>
+        <p><i class="fas fa-theater-masks"></i> <strong>Acteurs :  </strong> <strong> <%= @event.actors.first.first_name %> <%= @event.actors.first.last_name %> </strong> et <strong><%= @event.actors.second.first_name %> <%= @event.actors.second.last_name %></strong></p>
+        <p><i class="far fa-paper-plane"></i> <%= @event.summary %></p>
+    </div>
+  </div> <!-- d flex -->
+  <div class="d-flex justify-content-between">
+    <%= link_to "Retour à la liste", events_path, class:"mt-5", class:"btn btn-navigation" %>
+    <button class="btn btn-action">Réserver une place !</button>
+  </div>
+
+  <div class="intention-note mt-5">
+    <h2>Note d'intention...</h2>
+    <br>
+    <p><%= @event.intention_note %></p>
+  </div>
+</div> <!-- container -->

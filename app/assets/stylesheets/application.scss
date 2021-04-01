@@ -12,6 +12,16 @@
 @import "components/index";
 @import "pages/index";
 
+.nounderline {
+ text-decoration:none;
+ color: black;
+}
+
+.nounderline:hover {
+ text-decoration:none;
+ color: black;
+}
+
 h1 {
 color: $bordeaux;
 font-style: bold;
@@ -19,6 +29,7 @@ font-style: bold;
 
 p {
   font-size: 24px;
+  font-weight: normal;
 }
 
 body {
