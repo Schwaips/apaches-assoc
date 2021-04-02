@@ -7,7 +7,9 @@
     <div class="event-description ml-5">
        <h1 class="mb-3"><%= @event.title %></h1>
         <p><i class="far fa-clock"></i> <strong>Durée : </strong><%= @event.duration %> minutes</p>
-        <p><i class="fas fa-theater-masks"></i> <strong>Acteurs :  </strong> <strong> <%= @event.actors.first.first_name %> <%= @event.actors.first.last_name %> </strong> et <strong><%= @event.actors.second.first_name %> <%= @event.actors.second.last_name %></strong></p>
+        <% if @event.actors.exists? %>
+          <p><i class="fas fa-theater-masks"></i> <strong>Acteurs :  </strong> <strong> <%= @event.actors.first.first_name %> <%= @event.actors.first.last_name %> </strong> et <strong><%= @event.actors.second.first_name %> <%= @event.actors.second.last_name %></strong></p>
+        <% end %>
         <p><i class="far fa-paper-plane"></i> <%= @event.summary %></p>
     </div>
   </div> <!-- d flex -->
@@ -16,6 +18,12 @@
     <button class="btn btn-action">Réserver une place !</button>
   </div>
 
+    <% if current_user.admin == true %>
+      <%= link_to  new_event_actor_event_path(event_id: @event, actorevent: @actorevent) do %>
+       <li><i class="fas fa-plus-circle"></i> Ajouter des acteurs</li>
+    <% end %> <!-- link to end-->
+
+    <% end %>
   <div class="intention-note mt-5">
     <h2>Note d'intention...</h2>
     <br>
