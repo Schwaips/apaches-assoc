@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 gem 'pundit'
+gem 'rails_admin', '~> 2.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

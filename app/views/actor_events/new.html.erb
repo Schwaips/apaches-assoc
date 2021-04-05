@@ -1,13 +1,9 @@
 <div class="container">
   <h1>Ajouter des acteurs à <%= @event.title %></h1>
 
-  <%= simple_form_for @actorevent do |f| %>
+  <%= simple_form_for [@event, @actorevent] do |f| %>
     <div class="form-inputs">
-      <%= f.input :title, label: "Nom", placeholder: "L'avare" %>
-      <%= f.input :duration, label: "Durée en minutes" %>
-      <%= f.input :summary, label: "Résumé", placeholder: "Voici l'histoire de Bambi..."%>
-      <%= f.input :intention_note, label: "Note d'intention", as: :text %>
-      <#%= f.association :actors,
+      <%= f.association :actor,
           label_method: :first_name,
           collection: Actor.order(:first_name) %>
       <%= f.input :photo, as: :file, label: "Choisir une nouvelle photo (200x300)" %>

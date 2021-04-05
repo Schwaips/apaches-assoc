@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 
   def show
     authorize @event
+    @actorevent = ActorEvent.new
+    authorize @actorevent
   end
 
   def new
@@ -21,7 +23,6 @@ class EventsController < ApplicationController
     authorize @event
     @event.user = current_user
     @event.assign_attributes(event_params)
-    raise
     if @event.valid?
       @event.save
       redirect_to "/"
