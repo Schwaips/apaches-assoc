@@ -43,6 +43,8 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    config.included_models = [ "Event", "Actor", "User" ]
   end
 end
 
