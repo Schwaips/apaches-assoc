@@ -3,6 +3,8 @@ class ActorEventsController < ApplicationController
   def new
     @actorevent = ActorEvent.new
     @event = Event.find(params[:event_id])
+    authorize @event
+    authorize @actorevent
   end
 
   def create
