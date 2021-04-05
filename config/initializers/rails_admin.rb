@@ -1,7 +1,7 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-
+require "nested_form/engine" require "nested_form/builder_mixin"
   # == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
