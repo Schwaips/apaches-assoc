@@ -21,10 +21,13 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     authorize @event
+    # @actors = @event.actors
     @event.user = current_user
+    @params = params[:event][:actor_ids] if params[:event][:actor_ids]
     @event.assign_attributes(event_params)
     if @event.valid?
       @event.save
+      actor_event_method(@params, @event.id)
       redirect_to "/"
     else
       render :new
@@ -69,5 +72,13 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :duration, :user_id, :photo, :intention_note, :summary, :actors)
+  end
+
+  def actor_event_method(params, event_id)
+    params.each do |actor|
+      unless actor.blank?
+        ActorEvent.new(event_id: event_id, actor_id: actor).save!
+      end
+    end
   end
 end
