@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "apaches-small_logo-942x802.JPG", class: "rounded" %>
     <% end %>
@@ -37,6 +37,11 @@
               <i class="fas fa-user"></i> <%= current_user.email %>
             <% end %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <% if current_user.admin  %>
+              <%= link_to  rails_admin_path, class: "dropdown-item" do %>
+                <i class="fas fa-tools"></i> Administration
+              <% end %>
+            <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item " do %>
               <i class="fas fa-sign-out-alt"></i> Se déconnecter
             <% end %>
