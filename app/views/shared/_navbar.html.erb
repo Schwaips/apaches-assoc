@@ -9,7 +9,7 @@
 
 
   <% if user_signed_in? && current_user.admin == true  %>
-   <%= link_to  new_event_path(), class:"btn btn-action" do %>
+   <%= link_to  new_event_path(), class:"btn btn-navbar" do %>
     Nouveau spectacle
    <% end %>
   <% end %>
