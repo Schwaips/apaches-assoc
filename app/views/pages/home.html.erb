@@ -60,16 +60,20 @@
 
   <div class="calendar container mt-5">
     <h1 class="text-center mt-5"> Calendrier </h1>
-    <%= week_calendar(meetings: @meetings, end_attribute: :end_time) do |date, meetings| %>
+    <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
       <%= date %>
 
       <% meetings.each do |meeting| %>
-        <div class="meeting">  <-- We will add some style to the meeting class later so let's add it now -->
-          <p><%= meeting.name %></p>
+        <div class="meeting">  <!-- We will add some style to the meeting class later so let's add it now -->
+          <%= link_to event_path(meeting), class:"nounderline" do %>
+            <p><strong><%= meeting.title %></strong></p>
+            <span>De <%= meeting.start_time.hour %>h à <%= meeting.end_time.hour %>h</span>
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div> <!-- calendar -->
+
   <div class="image-home">
     <%= cl_image_tag "apaches/logo_apaches_1236x1080", class:"pic-main-2 mt-5 mb-5" %>
   </div> <!-- image home -->

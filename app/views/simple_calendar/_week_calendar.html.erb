@@ -9,9 +9,9 @@
         <% end %>
         <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
       </div> <!-- calendar heading-->
-        <% if current_user.admin? %>
+ 
           <%= link_to 'Create event', new_event_path, class: 'btn btn-navbar' %>
-        <% end %>
+
     </div> <!-- d flex -->
 
 

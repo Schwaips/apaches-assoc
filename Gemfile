@@ -26,8 +26,11 @@ gem 'redis', '~> 4.0'
 # cloudinary
 gem 'cloudinary', '~> 1.16.0'
 
-# calendar 
+# calendar
 gem "simple_calendar", "~> 2.4"
+
+# internationalization
+gem 'rails-i18n'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

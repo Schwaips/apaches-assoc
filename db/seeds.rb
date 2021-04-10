@@ -105,8 +105,8 @@ sa = Event.new(title: "Sans ascenseur",
   au cours d'une même soirée, avec toutes les étapes
   qu'elle comporte (le dîner, la piste de danse, la pause cigarette sur le balcon, le karaoké, la fin de soirée éméchée, le lendemain difficile, etc...). La rencontre, l'échange, la parole, le geste, l'incompréhension sont autant de thèmes récurrents, d'éléments de situations propices aux ressorts comiques, mais qui délivrent un message à la fois doux et acide sur les rapports humains dans notre société. Deux hommes qui cherchent à se connaître eux-mêmes en risquant l'autre, qui se questionnent sur ce qui les entoure et sur la nature même de leurs échanges.",
   user: User.first,
-  start_time: Time.parse('2021-04-10 20:00'),
-  end_time: Time.parse('2021-04-10 22:00'))
+  start_time: Time.parse('2021-04-11 20:00'),
+  end_time: Time.parse('2021-04-11 22:00'))
   sapic = URI.open('https://res.cloudinary.com/cb-dev/image/upload/v1616519839/apaches/affiche-ascenceur-2021.jpg')
   sa.photo.attach(io: sapic, filename: 'sans-ascenseur-affiche.jpg', content_type: 'image/jpg' )
   sa.save!
