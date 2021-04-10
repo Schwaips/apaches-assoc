@@ -5,6 +5,12 @@
       <%= f.input :duration, label: "Durée en minutes" %>
       <%= f.input :summary, label: "Résumé", placeholder: "Voici l'histoire de Bambi..."%>
       <%= f.input :intention_note, label: "Note d'intention", as: :text %>
+      <span>Début</span>
+      
+        <%= f.datetime_field :start_time, label: "Début", value: Time.now %>
+      <span>Fin </span>
+      <%= f.datetime_field :end_time, label: "Fin", value: Time.now, class: "mt-2" %>
+      <br>
       <%= f.association :actors, label_method: :first_name, collection: Actor.order(:first_name) %>
       <%= f.input :photo, as: :file, label: "Choisir une nouvelle photo (200x300)" %>
     </div>
