@@ -6,17 +6,17 @@
       <%= f.input :summary, label: "Résumé", placeholder: "Voici l'histoire de Bambi..."%>
       <%= f.input :intention_note, label: "Note d'intention", as: :text %>
       <span>Début</span>
-      
-        <%= f.datetime_field :start_time, label: "Début", value: Time.now %>
+
+      <%= f.datetime_field :start_time, label: "Début", value: Time.now %>
       <span>Fin </span>
-      <%= f.datetime_field :end_time, label: "Fin", value: Time.now, class: "mt-2" %>
+      <%= f.datetime_field :end_time, label: "Fin", value: Time.now, class: "mt-2 mb-2" %>
       <br>
-      <%= f.association :actors, label_method: :first_name, collection: Actor.order(:first_name) %>
+      <%= f.association :actors, label_method: :first_name, collection: Actor.order(:first_name), label: "Acteurs (sélectionner au moins 2)" %>
       <%= f.input :photo, as: :file, label: "Choisir une nouvelle photo (200x300)" %>
     </div>
 
     <div class="form-actions">
-      <%= f.submit "Créer", class: 'btn btn-flat mb-5' %>
+      <%= f.submit "Créer", class: 'btn btn-navbar mb-5' %>
     </div>
   <% end %>
 </div><!-- container -->
