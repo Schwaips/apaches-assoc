@@ -5,7 +5,7 @@
       <%= cl_image_tag @event.photo.key, class: "pic-show-event" %>
     </div>
     <div class="event-description ml-5">
-       <h1 class="mb-3"><%= @event.title %></h1>
+       <h2 class="mb-3"><%= @event.title %></h2>
         <p><i class="far fa-clock"></i> <strong>Durée : </strong><%= @event.duration %> minutes</p>
         <% if @event.actors.exists? %>
           <p><i class="fas fa-theater-masks"></i> <strong>Acteurs :  </strong> <strong> <%= @event.actors.first.first_name %> <%= @event.actors.first.last_name %> </strong> et <strong><%= @event.actors.second.first_name %> <%= @event.actors.second.last_name %></strong></p>
