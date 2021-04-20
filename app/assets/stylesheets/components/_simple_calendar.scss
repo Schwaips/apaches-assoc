@@ -1,0 +1,25 @@
+.simple-calendar {
+    table {
+      min-height: 60vh;
+    }
+    .today {
+      background-color: #FAF3DD;
+    }
+  }
+
+  .meeting {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: rgba(52,129,131, 1);
+    transition: background 0.3s ease;
+  }
+
+  .meeting:hover {
+  cursor: pointer;
+  background-color:rgba(52,129,131, 0.8);
+  background-image:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(52,129,131, 0.8) 100%);
+  background-repeat:no-repeat;
+  background-size: 200% 100%;
+  transition:background-size 1s, background-color 1s;
+  }

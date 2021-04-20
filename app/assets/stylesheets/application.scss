@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/simple_calendar";
 
 .nounderline {
  text-decoration:none;
@@ -27,6 +28,11 @@ color: $bordeaux;
 font-style: bold;
 }
 
+h2 {
+  color: $dark-green;
+  font-style: bold;
+}
+
 p {
   font-size: 16px;
   font-weight: normal;
@@ -36,7 +42,10 @@ body {
   background-color: white;
 }
 
+.white-font {
+  color:white;
 
+}
 //avoid floating footer
 .main {
   min-height: calc(100vh - 20vh); // if your footer height is 60px

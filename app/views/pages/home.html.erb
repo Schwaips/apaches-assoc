@@ -19,7 +19,7 @@
   <div class="container spectacle">
     <h1 class="text-center">Spectacles</h1>
   </div>
-  <div class="weak-margin">
+  <div class="spectacle weak-margin">
     <div class="carousel">
       <div class="carousel__container">
         <% @events.each do |event| %>
@@ -58,6 +58,21 @@
     </div> <!-- carousel -->
   </div> <!-- weak margin -->
 
+  <div class="calendar container mt-5">
+    <h1 class="text-center mt-5"> Calendrier </h1>
+    <%= month_calendar(events: @meetings, end_attribute: :end_time) do |date, meetings| %>
+      <%= date %>
+
+      <% meetings.each do |meeting| %>
+        <div class="meeting">  <!-- We will add some style to the meeting class later so let's add it now -->
+          <%= link_to event_path(meeting), class:"nounderline white-font" do %>
+            <p><strong><%= meeting.title %></strong></p>
+            <span>De <%= meeting.start_time.hour %>h<%= meeting.start_time.min %> à <%= meeting.end_time.hour %>h<%= meeting.end_time.min %><span>
+          <% end %>
+        </div>
+      <% end %> <!-- iteration meeting -->
+    <% end %> <!-- render calendar -->
+  </div> <!-- calendar -->
 
   <div class="image-home">
     <%= cl_image_tag "apaches/logo_apaches_1236x1080", class:"pic-main-2 mt-5 mb-5" %>
@@ -105,6 +120,9 @@
       </div> <!-- actor description -->
     </div> <!-- actor card home -->
   </div> <!--actors container mt-5 -->
+
+
+
 
 <br><br><br><br>
 

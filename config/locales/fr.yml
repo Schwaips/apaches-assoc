@@ -1,0 +1,9 @@
+fr:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    week: "Semaine"
+    monday: "Lundi"
+    tuesday: "Mardi"
+    wednesday: "Mercredi"
+    
