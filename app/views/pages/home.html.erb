@@ -65,9 +65,9 @@
 
       <% meetings.each do |meeting| %>
         <div class="meeting">  <!-- We will add some style to the meeting class later so let's add it now -->
-          <%= link_to event_path(meeting), class:"nounderline" do %>
+          <%= link_to event_path(meeting), class:"nounderline white-font" do %>
             <p><strong><%= meeting.title %></strong></p>
-            <span>De <%= meeting.start_time.hour %>h à <%= meeting.end_time.hour %>h</span>
+            <span>De <%= meeting.start_time.hour %>h<%= meeting.start_time.min %> à <%= meeting.end_time.hour %>h<%= meeting.end_time.min %><span>
           <% end %>
         </div>
       <% end %> <!-- iteration meeting -->

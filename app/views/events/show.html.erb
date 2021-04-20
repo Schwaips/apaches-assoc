@@ -13,17 +13,20 @@
         <p><i class="far fa-paper-plane"></i> <%= @event.summary %></p>
     </div>
   </div> <!-- d flex -->
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mb-5">
     <%= link_to "Retour à la liste", events_path, class:"mt-5", class:"btn btn-navigation" %>
     <button class="btn btn-action">Réserver une place !</button>
   </div>
 
-    <% if policy(@actorevent).create? %>
-      <%= link_to  new_event_actor_event_path(event_id: @event, actorevent: @actorevent) do %>
-       <li><i class="fas fa-plus-circle"></i> Ajouter des acteurs</li>
-    <% end %> <!-- link to end-->
+    <h2>Réserver</h2>
+    <p>Choisir l'horaire</p>
+    <div class="meeting">  <!-- We will add some style to the meeting class later so let's add it now -->
 
-    <% end %>
+      <%= link_to event_path(@event), class:"nounderline white-font" do %>
+        <p><strong><%= @event.title %></strong></p>
+        <span><%= @event.start_time.hour %>h<%= @event.start_time.min %> à <%= @event.end_time.hour %>h<%= @event.end_time.min %><span>
+      <% end %>
+    </div>
   <div class="intention-note mt-5">
     <h2>Note d'intention...</h2>
     <br>

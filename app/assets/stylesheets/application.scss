@@ -42,7 +42,10 @@ body {
   background-color: white;
 }
 
+.white-font {
+  color:white;
 
+}
 //avoid floating footer
 .main {
   min-height: calc(100vh - 20vh); // if your footer height is 60px
