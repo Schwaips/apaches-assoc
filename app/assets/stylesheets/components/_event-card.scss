@@ -1,15 +1,15 @@
 .event-card {
   // border: 4px solid rgba(137,124,128,0.23);
   border-radius: 15px;
-  width: 800px;
-  height: 400px;
+  width: 500px;
+  height: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 35px;
   padding-right: 15px;
   margin-right: 10px;
-  font-size: 22px;
+  font-size: 16px;
   margin-bottom: 15px;
 }
 
@@ -23,8 +23,9 @@
 }
 
 .pic-event {
-  width: 200px;
-  margin-right: 60px;
+  width: 140px;
+  margin-right: 15px;
+  border-radius: 15px;
 }
 
 .event-card h2 {
@@ -40,4 +41,111 @@
   margin-bottom: 20px;
   align-items: center;
   justify-content: space-between;
+}
+
+// carousel on home page
+@media (min-width: 768px) {
+  /* show 4 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -25%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be absolue position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+
+
+.carousel {
+  width: 100%;
+  overflow: scroll;
+  padding: 30px;
+  position: relative;
+}
+.carousel__container {
+  white-space: nowrap;
+  margin: 70px 0px;
+  padding-bottom: 10px;
+}
+.carousel__item {
+  background-color: rgba(255, 234, 238, 0.5);
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 450ms all;
+  tranform-origin: center left;
+}
+.carousel__item:hover ~ .carousel__item{
+  transform: translate3d(100px, 0, 0);
+  background-color: rgba(255, 234, 238, 2);
+}
+.carousel__container:hover .carousel__item {
+  opacity:  0.3;
+}
+.carousel__container:hover .carousel__item:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.weak-margin .carousel__item {
+  margin: 0 50px;
 }

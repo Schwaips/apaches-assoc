@@ -18,7 +18,7 @@ puts "--data destroyed--"
 
 puts "--starting seed---"
 puts "--Creating Users --"
-puts "admin user charlie"
+puts "user charlie -- PLEASE change admin in console."
 c = User.create!(email: "charlie.bertrand@live.com", password: "charlie.bertrand@live.com", admin: true)
 puts "-- charlie created"
 
@@ -92,7 +92,7 @@ puts "--Florian created--"
 
 
 puts "---creating events---"
-puts "#{User.first}"
+
 sa = Event.new(title: "Sans ascenseur",
   duration: "80",
   summary: "Qu’advient-il lorsque Monsieur n°1 croise  Monsieur n°2 lors d’une soirée organisée ?
