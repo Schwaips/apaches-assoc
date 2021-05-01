@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :actors, only: [:new, :create]
     resources :actor_events, only: [:new, :create]
+    resources :eventinfos, only: [:new, :create, :update]
   end
+  resources :eventinfos, only: [:destroy]
 end
