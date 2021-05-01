@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :eventinfos, only: [:new, :create, :update]
   end
   resources :eventinfos, only: [:destroy]
+  resources :baskets
 end

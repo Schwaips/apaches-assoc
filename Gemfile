@@ -32,6 +32,9 @@ gem "simple_calendar", "~> 2.4"
 # internationalization
 gem 'rails-i18n'
 
+# money management
+gem 'money-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

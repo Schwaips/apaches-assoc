@@ -115,6 +115,9 @@ sa = Event.new(title: "Sans ascenseur",
   saactorsval = ActorEvent.new(event_id: sa.id, actor_id: val.id)
   saactorstib.save!
   saactorsval.save!
+
+  info = Eventinfo.create!(event_id: sa.id, number_of_seat: 56, start_time: Time.now, end_time: Time.now + (60 * 60), theater_name:"Boulevard theatre", address:"Baumette Trélazé", unit_price_cents: 59.9 )
+
   puts "--actors added to actor_events for Sans ascenseur"
 
   puts "--Sans ascenseur event saved--"
