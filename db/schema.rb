@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_10_142855) do
+ActiveRecord::Schema.define(version: 2021_05_01_103232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,18 @@ ActiveRecord::Schema.define(version: 2021_04_10_142855) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "eventinfos", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "theater_name"
+    t.string "address"
+    t.integer "number_of_seat"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_eventinfos_on_event_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "duration"
@@ -93,5 +105,6 @@ ActiveRecord::Schema.define(version: 2021_04_10_142855) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "actor_events", "actors"
   add_foreign_key "actor_events", "events"
+  add_foreign_key "eventinfos", "events"
   add_foreign_key "events", "users"
 end

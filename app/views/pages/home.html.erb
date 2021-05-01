@@ -24,7 +24,7 @@
       <div class="carousel__container">
         <% @events.each do |event| %>
           <%= link_to  event_path(event), class:"nounderline" do %>
-            <div class="carousel__item">
+            <div class="carousel__item">  
               <div class="event-card">
                 <div class="show-pic">
                   <% if event.photo.attached? %>

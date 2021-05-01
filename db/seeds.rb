@@ -19,7 +19,7 @@ puts "--data destroyed--"
 puts "--starting seed---"
 puts "--Creating Users --"
 puts "user charlie -- PLEASE change admin in console."
-c = User.create!(email: "charlie.bertrand@live.com", password: "charlie.bertrand@live.com", admin: true)
+  c = User.create!(email: "charlie.bertrand@live.com", password: "charlie.bertrand@live.com", admin: true)
 puts "-- charlie created"
 
 puts "example"

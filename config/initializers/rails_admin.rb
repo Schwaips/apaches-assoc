@@ -45,8 +45,9 @@ require "nested_form/builder_mixin"
     # history_index
     # history_show
 
-    config.included_models = [ "Event", "Actor", "User" ]
+    config.included_models = [ "Event", "Actor", "User", "Eventinfo" ]
   end
 end
 
 RailsAdmin.config {|c| c.label_methods << :first_name }
+RailsAdmin.config {|c| c.label_methods << :email }
