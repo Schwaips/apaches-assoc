@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_103232) do
+ActiveRecord::Schema.define(version: 2021_05_01_111029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_103232) do
     t.integer "number_of_seat"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "unit_price_cents", default: 0, null: false
     t.index ["event_id"], name: "index_eventinfos_on_event_id"
   end
 
