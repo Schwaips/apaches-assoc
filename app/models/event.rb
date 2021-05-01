@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   validates :start_time, :end_time, presence: true
   has_many :actor_events, dependent: :destroy
   has_many :actors, through: :actor_events
-  has_many :eventinfos
+  has_many :eventinfos, dependent: :destroy
   has_one_attached :photo
   belongs_to :user
 
